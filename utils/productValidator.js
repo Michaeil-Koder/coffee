@@ -49,21 +49,21 @@ const validatorBody = () => {
             .isLength({ min: 1, max: 5 })
             .withMessage("is category range of 1 to 5")
             .isArray()
-            .withMessage("is category type is Arr"),
+            .withMessage("is category type is Array"),
         body("tag")
             .notEmpty()
             .withMessage("is tag not empty")
             .isLength({ min: 1, max: 5 })
             .withMessage("is tag range of 1 to 5")
             .isArray()
-            .withMessage("is tag type is Arr"),
+            .withMessage("is tag type is Array"),
         body("information")
             .notEmpty()
             .withMessage("is information not empty")
             .isLength({ min: 1, max: 5 })
             .withMessage("is information range of 1 to 5")
             .isObject()
-            .withMessage("is information type is Arr"),
+            .withMessage("is information type is Object"),
     ]
 }
 
