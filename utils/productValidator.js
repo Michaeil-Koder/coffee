@@ -60,8 +60,6 @@ const validatorBody = () => {
         body("information")
             .notEmpty()
             .withMessage("is information not empty")
-            .isLength({ min: 1, max: 5 })
-            .withMessage("is information range of 1 to 5")
             .isObject()
             .withMessage("is information type is Object"),
     ]
