@@ -85,7 +85,7 @@ exports.remove = async (req, res) => {
 exports.getOne = async (req, res) => {
     try {
         const { href } = req.params
-        const product = await productModel.findOne({ href }, "-__v").lean()
+        const product = await productModel.findOne({ href }, "-__v")
         if (!product) {
             return res.status(404).send({ message: "Product Not Found!!" })
         }
