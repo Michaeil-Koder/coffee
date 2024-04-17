@@ -19,12 +19,14 @@ configsSwagger(server)
 
 // Require Routes
 const productRoutes = require("./module/product/productRoutes")
+const menuRoutes = require("./module/menu/menuRoutes")
 
 
 
 // use Routes
 
 server.use("/coffee/product", productRoutes)
+server.use("/coffee/menu", menuRoutes)
 
 
 

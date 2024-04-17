@@ -1,0 +1,306 @@
+[
+    {
+        "src": "images/h-1-list-icon-img-7-150x150.jpg",
+        "name": "ICED CARAMEL LATTE",
+        "des": "Espresso, Milk, Ice and Caramel Sauce",
+        "price": 270000,
+        "new": "",
+        "isfilter": "home"
+    },
+    {
+        "src": "images/h-1-list-icon-img-8-150x150.jpg",
+        "name": "ESPRESSO MACCHIATO",
+        "des": "Rich Espresso With Milk and Foam",
+        "price": 176000,
+        "new": "",
+        "isfilter": "home"
+    },
+    {
+        "src": "images/h-1-list-icon-img-9-150x150.jpg",
+        "name": " CARAMEL MACCHIATO",
+        "des": "Espresso, vanilla-flavored syrup and milk",
+        "price": 133000,
+        "new": "",
+        "isfilter": "home"
+    },
+    {
+        "src": "images/h-1-list-icon-img-10-150x150.jpg",
+        "name": "ICED SMOKED LATTE",
+        "des": "Espresso, ice, with smoked butterscotch",
+        "price": 182000,
+        "new": "new",
+        "isfilter": "home"
+    },
+    {
+        "src": "images/h-1-list-icon-img-11-150x150.jpg",
+        "name": "ICED CAFFE MOCHA",
+        "des": "Espresso, bittersweet mocha sauce, milk and ice",
+        "price": 144000,
+        "new": "",
+        "isfilter": "home"
+    },
+    {
+        "src": "images/h-1-list-icon-img-12-150x150.jpg",
+        "name": "ICED GINGERBREAD LATTE",
+        "des": "Espresso, Milk, Ice, and Gingerbread Flavor",
+        "price": 236000,
+        "new": "",
+        "isfilter": "home"
+    },
+    {
+        "src": "images/h-1-list-icon-img-150x150.jpg",
+        "name": "CAFFE LATTE",
+        "des": "Espresso With Milk, and Whipped Cream",
+        "price": 170000,
+        "new": "new",
+        "isfilter": "home"
+    },
+    {
+        "src": "images/h-1-list-icon-img-2-150x150.jpg",
+        "name": "CAFFE MOCHA",
+        "des": "Espresso With Milk, and Whipped Cream",
+        "price": 362000,
+        "new": "",
+        "isfilter": "home"
+    },
+    {
+        "src": "images/h-1-list-icon-img-3-150x150.jpg",
+        "name": "WHITE CHOCOLATE MOCHA",
+        "des": "Espresso, White Chocolate, Milk, Ice and Cream",
+        "price": 145000,
+        "new": "",
+        "isfilter": "home"
+    },
+    {
+        "src": "images/h-1-list-icon-img-4-150x150.jpg",
+        "name": "CAFFE AMERICANO",
+        "des": "Espresso Shots and Light Layer of Crema",
+        "price": 180000,
+        "new": "",
+        "isfilter": "home"
+    },
+    {
+        "src": "images/h-1-list-icon-img-5-150x150.jpg",
+        "name": "CAPPUCCINO",
+        "des": "Espresso, and Smoothed Layer of Foam",
+        "price": 246000,
+        "new": "",
+        "isfilter": "home"
+    },
+    {
+        "src": "images/h-1-list-icon-img-6-150x150.jpg",
+        "name": "VANILLA LATTE",
+        "des": "Espresso Milk With Flavor,and Cream",
+        "price": 199000,
+        "new": "",
+        "isfilter": "home"
+    },
+    {
+        "src": "images/h-1-list-icon-img-7-150x150.jpg",
+        "name": "ICED CARAMEL LATTE",
+        "des": "Espresso, Milk, Ice and Caramel Sauce",
+        "price": 270000,
+        "new": "",
+        "isfilter": "menu"
+    },
+    {
+        "src": "images/h-1-list-icon-img-8-150x150.jpg",
+        "name": "ESPRESSO MACCHIATO",
+        "des": "Rich Espresso With Milk and Foam",
+        "price": 176000,
+        "new": "",
+        "isfilter": "menu"
+    },
+    {
+        "src": "images/h-1-list-icon-img-9-150x150.jpg",
+        "name": " CARAMEL MACCHIATO",
+        "des": "Espresso, vanilla-flavored syrup and milk",
+        "price": 133000,
+        "new": "",
+        "isfilter": "menu"
+    },
+    {
+        "src": "images/h-1-list-icon-img-10-150x150.jpg",
+        "name": "ICED SMOKED LATTE",
+        "des": "Espresso, ice, with smoked butterscotch",
+        "price": 182000,
+        "new": "new",
+        "isfilter": "menu"
+    },
+    {
+        "src": "images/h-1-list-icon-img-11-150x150.jpg",
+        "name": "ICED CAFFE MOCHA",
+        "des": "Espresso, bittersweet mocha sauce, milk and ice",
+        "price": 144000,
+        "new": "",
+        "isfilter": "menu"
+    },
+    {
+        "src": "images/h-1-list-icon-img-12-150x150.jpg",
+        "name": "ICED GINGERBREAD LATTE",
+        "des": "Espresso, Milk, Ice, and Gingerbread Flavor",
+        "price": 236000,
+        "new": "",
+        "isfilter": "menu"
+    },
+    {
+        "src": "images/h-1-list-icon-img-150x150.jpg",
+        "name": "CAFFE LATTE",
+        "des": "Espresso With Milk, and Whipped Cream",
+        "price": 170000,
+        "new": "new",
+        "isfilter": "menu"
+    },
+    {
+        "src": "images/h-1-list-icon-img-2-150x150.jpg",
+        "name": "CAFFE MOCHA",
+        "des": "Espresso With Milk, and Whipped Cream",
+        "price": 362000,
+        "new": "",
+        "isfilter": "menu"
+    },
+    {
+        "src": "images/h-1-list-icon-img-3-150x150.jpg",
+        "name": "WHITE CHOCOLATE MOCHA",
+        "des": "Espresso, White Chocolate, Milk, Ice and Cream",
+        "price": 145000,
+        "new": "",
+        "isfilter": "menu"
+    },
+    {
+        "src": "images/h-1-list-icon-img-4-150x150.jpg",
+        "name": "CAFFE AMERICANO",
+        "des": "Espresso Shots and Light Layer of Crema",
+        "price": 180000,
+        "new": "",
+        "isfilter": "menu"
+    },
+    {
+        "src": "images/h-1-list-icon-img-5-150x150.jpg",
+        "name": "CAPPUCCINO",
+        "des": "Espresso, and Smoothed Layer of Foam",
+        "price": 246000,
+        "new": "",
+        "isfilter": "menu"
+    },
+    {
+        "src": "images/h-1-list-icon-img-6-150x150.jpg",
+        "name": "VANILLA LATTE",
+        "des": "Espresso Milk With Flavor,and Cream",
+        "price": 199000,
+        "new": "",
+        "isfilter": "menu"
+    },
+    {
+        "src": "images/cofee-1.png",
+        "name": "CAFE LATTE",
+        "des": "Fresh brewed coffee",
+        "price": 232000,
+        "new": "",
+        "isfilter": "menu2"
+    },
+    {
+        "src": "images/coffee-4.png",
+        "name": "ESPRESSO",
+        "des": "Rich espresso with milk",
+        "price": 142000,
+        "new": "",
+        "isfilter": "menu2"
+    },
+    {
+        "src": "images/coffee-3.png",
+        "name": "MOCHA",
+        "des": "Espresso, mocha sauce, milk",
+        "price": 256000,
+        "new": "new",
+        "isfilter": "menu2"
+    },
+    {
+        "src": "images/coffee-2.png",
+        "name": "ICE COFFEE",
+        "des": "Cold brewed espresso",
+        "price": 152000,
+        "new": "",
+        "isfilter": "menu2"
+    },
+    {
+        "src": "images/coffee-5.png",
+        "name": "CAPPUCINO",
+        "des": "Cold brewed espresso",
+        "price": 140000,
+        "new": "",
+        "isfilter": "menu2"
+    },
+    {
+        "src": "images/coffee-5.png",
+        "name": "CAPPUCINO",
+        "des": "Cold brewed espresso",
+        "price": 140000,
+        "new": "",
+        "isfilter": "menu2"
+    },
+    {
+        "src": "images/h-1-list-icon-img-3-150x150.jpg",
+        "name": "WHITE CHOCOLATE MOCHA",
+        "des": "Espresso, White Chocolate, Milk, Ice and Cream",
+        "price": 145000,
+        "new": "",
+        "isfilter": "menu2"
+    },
+    {
+        "src": "images/h-1-list-icon-img-4-150x150.jpg",
+        "name": "CAFFE AMERICANO",
+        "des": "Espresso Shots and Light Layer of Crema",
+        "price": 180000,
+        "new": "",
+        "isfilter": "menu2"
+    },
+    {
+        "src": "images/h-1-list-icon-img-5-150x150.jpg",
+        "name": "CAPPUCCINO",
+        "des": "Espresso, and Smoothed Layer of Foam",
+        "price": 246000,
+        "new": "new",
+        "isfilter": "menu2"
+    },
+    {
+        "src": "images/h-1-list-icon-img-6-150x150.jpg",
+        "name": "VANILLA LATTE",
+        "des": "Espresso Milk With Flavor,and Cream",
+        "price": 199000,
+        "new": "",
+        "isfilter": "menu2"
+    },
+    {
+        "src": "images/pexels-clem-onojeghuo-175711.jpg",
+        "name": "DRIP COFFEE",
+        "des": "Nemo enim ipsam voluptatem quia voluptas sit asper",
+        "price": 170000,
+        "new": "",
+        "isfilter": "menu2"
+    },
+    {
+        "src": "images/pexels-clem-onojeghuo-175711.jpg",
+        "name": "ICED TEA",
+        "des": "Nemo enim ipsam voluptatem quia voluptas sit asper",
+        "price": 224000,
+        "new": "",
+        "isfilter": "menu2"
+    },
+    {
+        "src": "images/pexels-clem-onojeghuo-175711.jpg",
+        "name": "LEMONADE",
+        "des": "Nemo enim ipsam voluptatem quia voluptas sit asper",
+        "price": 490000,
+        "new": "new",
+        "isfilter": "menu2"
+    },
+    {
+        "src": "images/pexels-clem-onojeghuo-175711.jpg",
+        "name": "KOMUCHA",
+        "des": "Nemo enim ipsam voluptatem quia voluptas sit asper",
+        "price": 690000,
+        "new": "new",
+        "isfilter": "menu2"
+    }
+]

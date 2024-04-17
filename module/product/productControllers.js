@@ -74,6 +74,9 @@ exports.remove = async (req, res) => {
         if (!removeProduct) {
             return res.status(404).send({ message: "Product Not Found" })
         }
+        removeProduct.cover.forEach(image => {
+            fs.rmSync(path.join(__dirname, "../../public/covers/", image))
+        })
         res.send({ message: "remove Successfully:))" })
     } catch (error) {
         return res.status(error.status || 400).send(error.message || { message: "There is a Propblem" })

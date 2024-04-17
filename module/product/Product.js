@@ -24,37 +24,37 @@ const schema = new mongoose.Schema({
         type: Number,
         minLength: 1,
         maxLength: 10,
-        required: true
+        // required: true
     },
     description: {
         type: String,
         minLength: 5,
         maxLength: 1_000_000_000,
-        required: true
+        // required: true
     },
     remaining: {
         type: Number,
         minLength: 1,
         maxLength: 30,
-        required: true
+        // required: true
     },
     cover: {
         type: Array,
         minLength: 1,
         maxLength: 5,
-        required: true
+        // required: true
     },
     category: {
         type: Array,
         minLength: 1,
         maxLength: 5,
-        required: true
+        // required: true
     },
     tag: {
         type: Array,
         minLength: 1,
         maxLength: 5,
-        required: true
+        // required: true
     },
     information: {
         type: Object,

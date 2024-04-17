@@ -55,10 +55,15 @@ const { storage, fileFilter } = require("../../utils/uploder")
  *              '400':
  *                  description: There is propblem
  */
+// Router.route("/create")
+//     .post(multer({ storage, fileFilter, limits: { fileSize: 1024 * 1024 * 2 } }).fields([
+//         { name: "cover", maxCount: 5 }
+//     ]), validatorBody(), productControllers.create)
 Router.route("/create")
-    .post(multer({ storage, fileFilter, limits: { fileSize: 1024 * 1024 * 2 } }).fields([
+    .post(multer({ storage, fileFilter, limits: { fileSize: 1024 * 1024 * 5 } }).fields([
         { name: "cover", maxCount: 5 }
-    ]), validatorBody(), productControllers.create)
+    ]), productControllers.create)
+
 
 /**
  * @swagger
