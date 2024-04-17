@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/cp63848103016/coffee/
+    - export DEPLOYPATH=/home/cp63848103016/coffeeN/
     - /bin/cp * $DEPLOYPATH
