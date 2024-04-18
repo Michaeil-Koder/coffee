@@ -1,6 +1,6 @@
 const express = require("express");
 const server = express()
-
+const cookieParser = require("cookie-parser")
 
 require("dotenv").config()
 const cors = require("cors")
@@ -16,10 +16,11 @@ server.use(express.urlencoded({ extended: false }))
 server.use(cors())
 server.use("/cover", express.static(path.join(__dirname, "public/covers")))
 configsSwagger(server)
-
+server.use(cookieParser(process.env.JWT_SECURITY))
 // Require Routes
 const productRoutes = require("./module/product/productRoutes")
 const menuRoutes = require("./module/menu/menuRoutes")
+const userRoutes = require("./module/user/userRoutes")
 
 
 
@@ -27,6 +28,7 @@ const menuRoutes = require("./module/menu/menuRoutes")
 
 server.use("/coffee/product", productRoutes)
 server.use("/coffee/menu", menuRoutes)
+server.use("/coffee/user", userRoutes)
 
 
 

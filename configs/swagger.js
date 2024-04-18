@@ -15,7 +15,7 @@ const configsSwagger = (app) => {
                 { url: process.env.URL }
             ],
         },
-        apis: ["./module/product/productRoutes.js", "./module/menu/menuRoutes.js"]
+        apis: ["./module/product/productRoutes.js", "./module/menu/menuRoutes.js", "./module/user/userRoutes.js"]
     })
     app.use("/coffee/api-doc", swaggerUi.serve, swaggerUi.setup(swaggerjsOption))
 }
