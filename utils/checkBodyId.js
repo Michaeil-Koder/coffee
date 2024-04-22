@@ -26,7 +26,7 @@ const deleteImg = async (req, res) => {
 
 const checkBodyId = async (req, res, next) => {
     try {
-        const { product, creator, category, mainCommentID, commentID, adminID, size, colorID } = req.body
+        const { product, creator, category, mainCommentID, commentID, adminID, userID, productID } = req.body
         const { sessionID } = req.params
         if (product !== undefined && product.length !== 0) {
             const checkID = mongoose.Types.ObjectId.isValid(product)
@@ -71,19 +71,19 @@ const checkBodyId = async (req, res, next) => {
                 return res.status(423).send({ message: "adminID Not Valid" })
             }
         }
-        if (size !== undefined && size.length !== 0) {
-            const checkID = mongoose.Types.ObjectId.isValid(size)
+        if (userID !== undefined && userID.length !== 0) {
+            const checkID = mongoose.Types.ObjectId.isValid(userID)
             if (!checkID) {
                 await deleteImg(req)
-                return res.status(423).send({ message: "size Not Valid" })
+                return res.status(423).send({ message: "userID Not Valid" })
             }
-        } else if (colorID !== undefined && colorID.length !== 0) {
-            for (const id of colorID) {
+        } else if (productID !== undefined && productID.length !== 0) {
+            for (const id of productID) {
                 try {
                     const checkID = mongoose.Types.ObjectId.isValid(Object.keys(id)[0]);
                     if (!checkID) {
                         await deleteImg(req);
-                        return res.status(423).send({ message: "colorID Not Valid" });
+                        return res.status(423).send({ message: "productID Not Valid" });
                     }
                 } catch (err) {
                     throw new Error(err.message);

@@ -244,11 +244,14 @@ exports.login = async (req, res) => {
         const tokken = jwt.sign({ id: finduser._id }, process.env.JWT_SECURITY, {
             expiresIn: "5day"
         })
-        res.setHeader("Set-Cookie", cookie.serialize("tokken", tokken, {
-            maxAge: 60 * 60 * 24 * 5,
+        res.cookie("tokken", tokken, {
             httpOnly: true,
+            maxAge: 60 * 1000 * 60 * 24 * 5,
+            secure: true,
+            signed: true,
             path: "/"
-        })).status(200).send({ message: "ورود موفقیت آمیز بود" })
+        })
+        res.status(200).send({ message: "ورود موفقیت آمیز بود" })
     } catch (err) {
         return res.status(err.status || 400).send(err.message || { message: "خطایی روی داده است" })
     }

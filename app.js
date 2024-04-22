@@ -21,7 +21,7 @@ server.use(cookieParser(process.env.JWT_SECURITY))
 const productRoutes = require("./module/product/productRoutes")
 const menuRoutes = require("./module/menu/menuRoutes")
 const userRoutes = require("./module/user/userRoutes")
-
+const basketRoutes = require("./module/basket/basketRoutes")
 
 
 // use Routes
@@ -29,6 +29,7 @@ const userRoutes = require("./module/user/userRoutes")
 server.use("/coffee/product", productRoutes)
 server.use("/coffee/menu", menuRoutes)
 server.use("/coffee/user", userRoutes)
+server.use("/coffee/basket", basketRoutes)
 
 
 
