@@ -66,7 +66,7 @@ exports.create = async (req, res) => {
             maxAge: 60 * 1000 * 60 * 24 * 5,
             secure: true,
             signed: true,
-            path: "/"
+            path: `${req.headers.origin}/`
         })
         res.status(201).send({ user: userObj })
         let transporter = nodemailer.createTransport({
@@ -249,7 +249,7 @@ exports.login = async (req, res) => {
             maxAge: 60 * 1000 * 60 * 24 * 5,
             secure: true,
             signed: true,
-            path: "/"
+            path: `${req.headers.origin}/`
         })
         res.status(200).send({ message: "ورود موفقیت آمیز بود" })
     } catch (err) {
