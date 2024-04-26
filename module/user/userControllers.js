@@ -249,7 +249,7 @@ exports.login = async (req, res) => {
             maxAge: 60 * 1000 * 60 * 24 * 5,
             secure: true,
             signed: true,
-            path: `${req.headers.origin}/`
+            path: `/`
         })
         res.status(200).send({ message: "ورود موفقیت آمیز بود" })
     } catch (err) {
