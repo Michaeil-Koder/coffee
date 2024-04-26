@@ -13,7 +13,10 @@ const path = require("path")
 //Middleware
 server.use(express.json())
 server.use(express.urlencoded({ extended: false }))
-server.use(cors())
+server.use(cors({
+    origin: true,
+    credentials: true,
+}))
 server.use("/cover", express.static(path.join(__dirname, "public/covers")))
 configsSwagger(server)
 server.use(cookieParser(process.env.JWT_SECURITY))
