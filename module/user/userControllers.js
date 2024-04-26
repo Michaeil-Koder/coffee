@@ -66,7 +66,7 @@ exports.create = async (req, res) => {
             maxAge: 60 * 1000 * 60 * 24 * 5,
             secure: true,
             signed: true,
-            path: `${req.headers.origin}/`
+            path: "/"
         })
         res.status(201).send({ user: userObj })
         let transporter = nodemailer.createTransport({
