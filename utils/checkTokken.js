@@ -2,18 +2,19 @@ const jwt = require("jsonwebtoken")
 require("dotenv").config()
 const userModel = require("../module/user/User")
 // const banModel=require("../model/Ban")
+const axios = require("axios")
 
 
 const checkTokken = async (req, res, next) => {
     try {
-        const authHeader = req.header("Cookie")?.split("=")
+        const authHeader = req.headers.authorization?.split(" ")
         if (authHeader?.length !== 2) {
             return next()
         } else if (authHeader[1].length === 0) {
             return res.status(401).send({ message: "لطفا وارد شوید یا ثبت کنید" })
             // return res.redirect("/page/login")
         }
-        const idTokken = jwt.verify(req.signedCookies.tokken, process.env.JWT_SECURITY)
+        const idTokken = jwt.verify(authHeader[1], process.env.JWT_SECURITY)
         const user = await userModel.findById(idTokken.id, "-password")
         // const HasBan= await banModel.findOne({user:user._id})
         // if(HasBan){

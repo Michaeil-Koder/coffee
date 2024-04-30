@@ -19,7 +19,7 @@ server.use(cors({
 }))
 server.use("/cover", express.static(path.join(__dirname, "public/covers")))
 configsSwagger(server)
-server.use(cookieParser(process.env.JWT_SECURITY))
+server.use(cookieParser())
 // Require Routes
 const productRoutes = require("./module/product/productRoutes")
 const menuRoutes = require("./module/menu/menuRoutes")
