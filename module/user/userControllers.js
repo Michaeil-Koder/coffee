@@ -58,17 +58,19 @@ exports.create = async (req, res) => {
         delete userObj.password
         // res.setHeader("Set-Cookie", cookie.serialize("tokken", tokken), {
         //     httpOnly: true,
-        //     maxAge: 60 * 60 * 24 * 5,
+        //     signed: true,
+        //     maxAge: 60 * 60 * 24 * 5 * 1000,
+        //     // domain: req.headers.origin,
         //     path: "/"
-        // }).send({ user: userObj })
-        res.cookie("tokken", tokken, {
-            httpOnly: true,
-            maxAge: 60 * 1000 * 60 * 24 * 5,
-            secure: true,
-            signed: true,
-            path: "/"
-        })
-        res.status(201).send({ user: userObj })
+        // })
+        // res.cookie("tokken", tokken, {
+        //     httpOnly: true,
+        //     maxAge: 60 * 1000 * 60 * 24 * 5,
+        //     secure: true,
+        //     signed: true,
+        //     path: "/"
+        // })
+        res.status(201).send({ user: userObj, tokken })
         let transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
@@ -88,6 +90,7 @@ exports.create = async (req, res) => {
             }
         })
     } catch (err) {
+        console.log(err)
         return res.status(err.status || 400).send(err.message || { message: "خطایی روی داده است" })
     }
 }
@@ -244,14 +247,15 @@ exports.login = async (req, res) => {
         const tokken = jwt.sign({ id: finduser._id }, process.env.JWT_SECURITY, {
             expiresIn: "5day"
         })
-        res.cookie("tokken", tokken, {
-            httpOnly: true,
-            maxAge: 60 * 1000 * 60 * 24 * 5,
-            secure: true,
-            signed: true,
-            path: `/`
-        })
-        res.status(200).send({ message: "ورود موفقیت آمیز بود" })
+        // res.cookie("tokken", tokken, {
+        //     httpOnly: true,
+        //     maxAge: 60 * 1000 * 60 * 24 * 5,
+        //     secure: true,
+        //     signed: true,
+        //     path: `/`
+        // })
+
+        res.status(200).send({ message: "ورود موفقیت آمیز بود", tokken })
     } catch (err) {
         return res.status(err.status || 400).send(err.message || { message: "خطایی روی داده است" })
     }
