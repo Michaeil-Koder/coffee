@@ -30,7 +30,7 @@ exports.Add = async (req, res) => {
         const { user, productID, number } = req.body
         if (typeof (number) !== "number" || number <= 0) {
             return res.status(400).send({ message: "لطفا تعداد را بالای صفر و با تایپ عدد وارد کنید." })
-        } else if (!productID) {
+        } else if (!productID || productID.length === 0) {
             return res.status(400).send({ message: "آیدی محصول را وارد کنید." })
         }
         const HasProduct = await basketModel.findOne({ $and: [{ productID }, { userID: user }] })
