@@ -41,7 +41,7 @@ exports.Add = async (req, res) => {
             return res.send({ message: "به تعداد یک واحد اضافه شد." })
         }
         const resCreate = await basketModel.create({ userID: user._id, productID, number })
-        res.status(201).send({ message: "با موفقیت به سبد خرید اضافه شد." })
+        res.status(201).send({ message: "با موفقیت به سبد خرید اضافه شد.", result: resCreate })
     } catch (error) {
         console.error(error)
     }
@@ -53,13 +53,14 @@ exports.Add = async (req, res) => {
 exports.Increase = async (req, res) => {
     try {
         const { id } = req.params
-        const findBasket = await basketModel.findById(id)
+        const { user } = req.body
+        const findBasket = await basketModel.findOne({ $and: [{ _id: id }, { userID: user._id }, { status: "waiting" }] })
         if (!findBasket) {
             return res.status(404).send({ message: "محصولی یافت نشد" })
         } else if (findBasket.number === 15) {
             return res.status(400).send({ message: "بیشتر از 15 عدد نمی توانید انتخاب کنید." })
         }
-        const updateBasket = await basketModel.findByIdAndUpdate(id, { $inc: { number: 1 } }, { new: true }).select("-__v").populate("productID", "title href cover price").populate("userID", "name email role")
+        const updateBasket = await basketModel.findOneAndUpdate({ $and: [{ _id: id }, { userID: user._id }, { status: "waiting" }] }, { $inc: { number: 1 } }, { new: true }).select("-__v").populate("productID", "title href cover price").populate("userID", "name email role")
         res.send({ update: updateBasket })
     } catch (error) {
         console.error(error)
@@ -73,13 +74,14 @@ exports.Increase = async (req, res) => {
 exports.Decrease = async (req, res) => {
     try {
         const { id } = req.params
-        const findBasket = await basketModel.findById(id)
+        const { user } = req.body
+        const findBasket = await basketModel.findOne({ $and: [{ _id: id }, { userID: user._id }, { status: "waiting" }] })
         if (!findBasket) {
             return res.status(404).send({ message: "محصولی یافت نشد" })
         } else if (findBasket.number === 1) {
             return res.status(400).send({ message: "کمتر از 1 عدد نمی توانید انتخاب کنید." })
         }
-        const updateBasket = await basketModel.findByIdAndUpdate(id, { $inc: { number: -1 } }, { new: true }).select("-__v").populate("productID", "title href cover price").populate("userID", "name email role")
+        const updateBasket = await basketModel.findOneAndUpdate({ $and: [{ _id: id }, { userID: user._id }, { status: "waiting" }] }, { $inc: { number: -1 } }, { new: true }).select("-__v").populate("productID", "title href cover price").populate("userID", "name email role")
         res.send({ update: updateBasket })
     } catch (error) {
         console.error(error)
@@ -94,7 +96,8 @@ exports.Decrease = async (req, res) => {
 exports.Delete = async (req, res) => {
     try {
         const { id } = req.params
-        const findBasket = await basketModel.findByIdAndDelete(id)
+        const { user } = req.body
+        const findBasket = await basketModel.findOneAndDelete({ $and: [{ _id: id }, { userID: user._id }, { status: "waiting" }] })
         if (!findBasket) {
             return res.status(404).send({ message: "محصولی یافت نشد" })
         }
