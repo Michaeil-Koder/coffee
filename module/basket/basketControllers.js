@@ -33,11 +33,11 @@ exports.Add = async (req, res) => {
         } else if (!productID || productID.length === 0) {
             return res.status(400).send({ message: "آیدی محصول را وارد کنید." })
         }
-        const HasProduct = await basketModel.findOne({ $and: [{ productID }, { userID: user }] })
+        const HasProduct = await basketModel.findOne({ $and: [{ productID }, { userID: user }, { status: "waiting" }] })
         if (HasProduct?.number === 15) {
             return res.status(400).send({ message: "بیشتر از 15 عدد نمی توانید انتخاب کنید." })
         } else if (HasProduct) {
-            await basketModel.findOneAndUpdate({ $and: [{ productID }, { userID: user }] }, { $inc: { number: 1 } })
+            await basketModel.findOneAndUpdate({ $and: [{ productID }, { userID: user }, { status: "waiting" }] }, { $inc: { number: 1 } })
             return res.send({ message: "به تعداد یک واحد اضافه شد." })
         }
         const resCreate = await basketModel.create({ userID: user._id, productID, number })
