@@ -23,7 +23,7 @@ const checkTokken = async (req, res, next) => {
         req.body.user = user
         next()
     } catch (err) {
-        res.status(400).send(err)
+        res.status(401).send({ message: "توکن منقضی شده یا دارای مشکلی است." })
     }
 }
 
