@@ -30,9 +30,13 @@ exports.Add = async (req, res) => {
         const { user, productID, number } = req.body
         if (typeof (number) !== "number" || number <= 0) {
             return res.status(400).send({ message: "لطفا تعداد را بالای صفر و با تایپ عدد وارد کنید." })
+        } else if (!productID) {
+            return res.status(400).send({ message: "آیدی محصول را وارد کنید." })
         }
-        const HasProduct = await basketModel.find({ $and: [{ productID }, { userID: user }] })
-        if (HasProduct) {
+        const HasProduct = await basketModel.findOne({ $and: [{ productID }, { userID: user }] })
+        if (HasProduct?.number === 15) {
+            return res.status(400).send({ message: "بیشتر از 15 عدد نمی توانید انتخاب کنید." })
+        } else if (HasProduct) {
             await basketModel.findOneAndUpdate({ $and: [{ productID }, { userID: user }] }, { $inc: { number: 1 } })
             return res.send({ message: "به تعداد یک واحد اضافه شد." })
         }
