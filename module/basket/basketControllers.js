@@ -60,7 +60,7 @@ exports.Increase = async (req, res) => {
         } else if (findBasket.number === 15) {
             return res.status(400).send({ message: "بیشتر از 15 عدد نمی توانید انتخاب کنید." })
         }
-        const updateBasket = await basketModel.findOneAndUpdate({ $and: [{ _id: id }, { userID: user._id }, { status: "waiting" }] }, { $inc: { number: 1 } }, { new: true }).select("-__v").populate("productID", "title href cover price").populate("userID", "name email role")
+        const updateBasket = await basketModel.findOneAndUpdate({ $and: [{ _id: id }, { userID: user._id }, { status: "waiting" }] }, { $inc: { number: 1 }, updatedAt: new Date() }, { new: true }).select("-__v").populate("productID", "title href cover price").populate("userID", "name email role")
         res.send({ update: updateBasket })
     } catch (error) {
         console.error(error)
@@ -81,7 +81,7 @@ exports.Decrease = async (req, res) => {
         } else if (findBasket.number === 1) {
             return res.status(400).send({ message: "کمتر از 1 عدد نمی توانید انتخاب کنید." })
         }
-        const updateBasket = await basketModel.findOneAndUpdate({ $and: [{ _id: id }, { userID: user._id }, { status: "waiting" }] }, { $inc: { number: -1 } }, { new: true }).select("-__v").populate("productID", "title href cover price").populate("userID", "name email role")
+        const updateBasket = await basketModel.findOneAndUpdate({ $and: [{ _id: id }, { userID: user._id }, { status: "waiting" }] }, { $inc: { number: -1 }, updatedAt: new Date() }, { new: true }).select("-__v").populate("productID", "title href cover price").populate("userID", "name email role")
         res.send({ update: updateBasket })
     } catch (error) {
         console.error(error)
